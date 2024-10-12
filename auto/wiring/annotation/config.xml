@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+     <context:annotation-config/>
+    
+    
+
+	<!-- This is our beans -->
+
+
+	<!-- Auto wiring byName this checks the name in employee class and below 
+		bean name are same or not if same then auto wiring byName is done if not 
+		then it returns null -->
+		
+		
+		
+	<bean class="com.springlearn.auto.wiring.annotation.Address" name="address">
+		<property name="area" value="khar" />
+		<property name="city" value="Mumbai" />
+	</bean>
+	
+	<bean class="com.springlearn.auto.wiring.annotation.Address" name="address2">
+		<property name="area" value="Bandra" />
+		<property name="city" value="Mumbai" />
+	</bean>
+	
+	
+
+
+	<bean class="com.springlearn.auto.wiring.annotation.Employee" name="emp1" />	
+
+
+
+	<!-- Auto Wiring byType it simply check the type and then wiring is done 
+	<bean class="com.springlearn.auto.wiring.Address" name="address1">
+		<property name="area" value="bandra" />
+		<property name="city" value="Mumbai" />
+	</bean>
+
+
+	<bean class="com.springlearn.auto.wiring.Employee" name="emp2"
+		autowire="byType">
+	</bean>
+
+-->
+
+</beans>

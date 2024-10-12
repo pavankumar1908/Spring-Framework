@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- This is our beans -->
+
+
+	<bean class="com.springlearn.ci.Job" name="jref">
+		<constructor-arg value="Java Developer" />
+	</bean>
+
+
+
+	<bean class="com.springlearn.ci.Person" name="person">
+		<constructor-arg value="22020" type="int" />
+		<constructor-arg value="Pavankumar" />
+		<constructor-arg ref="jref" />
+	</bean>
+
+
+	<bean class="com.springlearn.ci.Person" name="person1">
+		<constructor-arg>
+			<value>22004</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Sanjay</value>
+		</constructor-arg>
+		<constructor-arg ref="jref">
+		</constructor-arg>
+	</bean>
+
+
+
+	<bean class="com.springlearn.ci.Person" name="person2"
+		c:PersonId="22015" c:PersonName="SagarGupta" c:j-ref="jref" />
+		
+		
+	<bean class="com.springlearn.ci.Addition" name="Add">
+	<constructor-arg value="5" />
+	<constructor-arg value="10"  />
+	</bean>
+	
+
+</beans>
